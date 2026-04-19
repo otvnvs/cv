@@ -14,6 +14,8 @@ A LaTeX-based CV build system that generates multiple output formats from a sing
 The project compiles one `.tex` source into five output formats, each serving a different purpose:
 
 - **PDF** — the primary human-readable document for recruiter submission
+- **DOCX** — Microsoft Word output
+- **ODT** — Open Office output
 - **HTML** — a styled web version with a dark theme, suitable for hosting or sharing as a link
 - **Markdown** — a portable, readable format suitable for GitHub, wikis, or further processing
 - **TXT (detex)** — a plain text version stripped of all LaTeX markup, for direct paste into ATS submission forms
