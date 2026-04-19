@@ -34,8 +34,10 @@ Having all five outputs from a single source ensures content stays in sync acros
 
 | Target | Command | Output |
 |---|---|---|
-| All formats | `make` or `make all` | PDF, HTML, MD, TXT, PDF.TXT |
+| All formats | `make` or `make all` | PDF, DOCX, ODT, HTML, MD, TXT, PDF.TXT |
 | PDF only | `make pdf` | `out/*.pdf` |
+| DOCX only | `make docx` | `out/*.docx` |
+| ODT only | `make odt` | `out/*.odt` |
 | HTML only | `make html` | `out/*.html` |
 | Markdown only | `make md` | `out/*.md` |
 | Plain text (detex) | `make txt` | `out/*.txt` |
