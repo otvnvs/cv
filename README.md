@@ -11,7 +11,7 @@ A LaTeX-based CV build system that generates multiple output formats from a sing
 
 ## Overview
 
-The project compiles one `.tex` source into five output formats, each serving a different purpose:
+The project compiles one `.tex` source into all output formats, each serving a different purpose:
 
 - **PDF** — the primary human-readable document for recruiter submission
 - **DOCX** — Microsoft Word output
@@ -21,7 +21,7 @@ The project compiles one `.tex` source into five output formats, each serving a 
 - **TXT (detex)** — a plain text version stripped of all LaTeX markup, for direct paste into ATS submission forms
 - **TXT (pdftotext)** — a layout-preserving plain text extraction from the PDF, for verifying what ATS systems will see when they parse the PDF directly
 
-Having all five outputs from a single source ensures content stays in sync across every format with a single build command.
+Having all outputs from a single source ensures content stays in sync across every format with a single build command.
 
 ## Dependencies
 
@@ -84,7 +84,7 @@ The project is structured with ATS (Applicant Tracking System) parsing in mind:
 
 ### Strengths
 
-**Single source of truth.** All five formats are derived from one `.tex` file. There is no risk of the PDF and the ATS submission copy diverging — a common problem when people maintain a Word document and a plain text version separately.
+**Single source of truth.** All all formats are derived from one `.tex` file. There is no risk of the PDF and the ATS submission copy diverging — a common problem when people maintain a Word document and a plain text version separately.
 
 **ATS pipeline is genuinely well considered.** The switch from `ps2pdf` to `pdflatex`, the hyphenation disable, the plain hyphen bullets, and the explicit `YYYY - YYYY` date format are all deliberate and correct choices. Most people submitting LaTeX CVs do not think about any of this.
 
@@ -96,7 +96,7 @@ The project is structured with ATS (Applicant Tracking System) parsing in mind:
 
 **Makefile is clean and composable.** Individual targets mean you can rebuild only what changed. The double `pdflatex` run is correctly handled. `.PHONY` is correctly declared.
 
-**Date-first format in experience entries.** Putting `YYYY - YYYY:` at the start of each subsection heading rather than right-aligning dates is an ATS-safe structural choice that also reads cleanly across all five output formats.
+**Date-first format in experience entries.** Putting `YYYY - YYYY:` at the start of each subsection heading rather than right-aligning dates is an ATS-safe structural choice that also reads cleanly across all output formats.
 
 ---
 
