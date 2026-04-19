@@ -5,17 +5,21 @@ TEX=./src/$(NAME).tex
 PDF=$(OUTDIR)/$(NAME).pdf
 HTML=$(OUTDIR)/$(NAME).html
 MD=$(OUTDIR)/$(NAME).md
+DOCX=$(OUTDIR)/$(NAME).docx
+ODT=$(OUTDIR)/$(NAME).odt
 TXT=$(OUTDIR)/$(NAME).txt
 PDFTXT=$(OUTDIR)/$(NAME).pdf.txt
 VIEWER=evince
 PDFTOTEXT=pdftotext
 CSS=./src/custom.css
-all: $(PDF) $(TXT) $(HTML) $(PDFTXT) $(MD)
+all: $(PDF) $(TXT) $(HTML) $(PDFTXT) $(MD) $(DOCX) $(ODT)
 pdf: $(PDF)
 txt: $(TXT)
 pdftxt: $(PDFTXT)
 html: $(HTML)
 md: $(MD)
+docx: $(DOCX)
+odt: $(ODT)
 
 $(PDF): $(TEX)
 	@mkdir -p $(@D)
@@ -63,6 +67,15 @@ $(HTML): $(TEX) $(CSS)
 $(MD): $(TEX)
 	@mkdir -p $(@D)
 	@pandoc "$(TEX)" -f latex -t markdown -o "$(MD)"
+
+$(DOCX): $(TEX)
+	@mkdir -p $(@D)
+	@pandoc "$(TEX)" -f latex -t docx -o "$(DOCX)"
+
+$(ODT): $(TEX)
+	@mkdir -p $(@D)
+	@pandoc "$(TEX)" -f latex -t odt -o "$(ODT)"
+
 view: $(PDF)
 	$(VIEWER) "$(PDF)"
 
