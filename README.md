@@ -2,6 +2,13 @@
 
 A LaTeX-based CV build system that generates multiple output formats from a single source file.
 
+## Sample Output
+
+- [PDF](https://github.com/otvnvs/cv/blob/main/out/Resume_-_Ockert_van_Schalkwyk.pdf)
+- [HTML](https://htmlpreview.github.io/?https://github.com/otvnvs/cv/blob/main/out/Resume_-_Ockert_van_Schalkwyk.html)
+- [MD](https://github.com/otvnvs/cv/blob/main/out/Resume_-_Ockert_van_Schalkwyk.md)
+- [TXT](https://github.com/otvnvs/cv/blob/main/out/Resume_-_Ockert_van_Schalkwyk.pdf.txt)
+
 ## Overview
 
 The project compiles one `.tex` source into five output formats, each serving a different purpose:
