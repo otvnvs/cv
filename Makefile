@@ -63,10 +63,12 @@ $(HTML): $(TEX) $(CSS)
 		$(OUTDIR)/$(NAME).aux \
 		$(OUTDIR)/$(NAME).log \
 		$(OUTDIR)/$(NAME).out
+	@cp $(HTML) ./index.html
 
 $(MD): $(TEX)
 	@mkdir -p $(@D)
 	@pandoc "$(TEX)" -f latex -t markdown -o "$(MD)"
+	@cp "$(MD)" ./README.md
 
 $(DOCX): $(TEX)
 	@mkdir -p $(@D)

@@ -1,115 +1,128 @@
-# cv-latex
+# Ockert van Schalkwyk
 
-A LaTeX-based CV build system that generates multiple output formats from a single source file.
+Software Developer\
+Northern Cape, South Africa\
++27 64 000 6731\
+<ockert8080@gmail.com>\
+[linkedin.com/in/ockert-van-schalkwyk-b98b303a5](https://www.linkedin.com/in/ockert-van-schalkwyk-b98b303a5/)\
+[github.com/otvnvs](https://github.com/otvnvs)\
+[medium.com/@ockert8080](https://medium.com/@ockert8080)
 
-## Sample Output
+# Summary
 
-- [PDF](https://github.com/otvnvs/cv/blob/main/out/Resume_-_Ockert_van_Schalkwyk.pdf)
-- [HTML](https://htmlpreview.github.io/?https://github.com/otvnvs/cv/blob/main/out/Resume_-_Ockert_van_Schalkwyk.html)
-- [MD](https://github.com/otvnvs/cv/blob/main/out/Resume_-_Ockert_van_Schalkwyk.md)
-- [TXT](https://github.com/otvnvs/cv/blob/main/out/Resume_-_Ockert_van_Schalkwyk.pdf.txt)
+Results-driven Software Developer with over 10 years of experience in
+rapid web and mobile application development using low-code platforms.
+Expertise includes complex integrations, custom widgets, digital
+wallets, decentralized identity solutions, and secure systems across
+finance, banking, aviation, and digital identity sectors.
 
-## Overview
+# Professional Experience
 
-The project compiles one `.tex` source into all output formats, each serving a different purpose:
+## 2025 - 2026: Software Engineer - VMG Labs LLC (Contract)
 
-- **PDF** — the primary human-readable document for recruiter submission
-- **DOCX** — Microsoft Word output
-- **ODT** — Open Office output
-- **HTML** — a styled web version with a dark theme, suitable for hosting or sharing as a link
-- **Markdown** — a portable, readable format suitable for GitHub, wikis, or further processing
-- **TXT (detex)** — a plain text version stripped of all LaTeX markup, for direct paste into ATS submission forms
-- **TXT (pdftotext)** — a layout-preserving plain text extraction from the PDF, for verifying what ATS systems will see when they parse the PDF directly
+-   **Duties:** Research and Development; various API integrations. MCP
+    Server and Document Intelligence.
 
-Having all outputs from a single source ensures content stays in sync across every format with a single build command.
+-   **Technologies:** Mendix, JavaScript, Java, Python, Groovy, SAP CPI,
+    SAP CAP, VueJS, Azure, Xano.
 
-## Dependencies
+-   **Impact:** Developed a suite of **rapid prototypes** across diverse
+    use cases to **drive sales demonstrations**.
 
-- `pdflatex` — primary PDF compiler
-- `htlatex` — LaTeX to HTML converter (part of TeX4ht)
-- `pandoc` — LaTeX to Markdown converter
-- `detex` — LaTeX markup stripper for plain text output
-- `pdftotext` — PDF text extractor (part of poppler-utils)
-- `evince` — PDF viewer (used by `make view`, substitutable)
+## 2021 - 2024: Platform Head Engineer - Entidad LLC (Contract)
 
-## Build Targets
+-   **Duties:** Research and Development; various API integrations.
+    Digital Wallet development; Widget Development; Mentorship.
 
-| Target | Command | Output |
-|---|---|---|
-| All formats | `make` or `make all` | PDF, DOCX, ODT, HTML, MD, TXT, PDF.TXT |
-| PDF only | `make pdf` | `out/*.pdf` |
-| DOCX only | `make docx` | `out/*.docx` |
-| ODT only | `make odt` | `out/*.odt` |
-| HTML only | `make html` | `out/*.html` |
-| Markdown only | `make md` | `out/*.md` |
-| Plain text (detex) | `make txt` | `out/*.txt` |
-| Plain text (pdftotext) | `make pdftxt` | `out/*.pdf.txt` |
-| Open PDF | `make view` | Opens in viewer |
-| Clean outputs | `make clean` | Removes `out/` |
+-   **Technologies:** Mendix, JavaScript, Java, Objective-C, React
+    Native.
 
-All outputs are written to `./out/`.
+-   **Impact:** Refined **DID verification** to secure digital wallets,
+    resulting in **high user adoption**.
 
-## Structure
+## 2021: Software Engineer - Inovo Telecoms, Centurion (Contract)
 
-```
-.
-├── Makefile
-├── README.md
-└── src/
-    ├── Resume_-_Ockert_van_Schalkwyk.tex   # single source of truth
-    └── custom.css                           # styles applied to HTML output
-```
+-   **Duties:** System maintenance and upgrades.
 
-## ATS Considerations
+-   **Technologies:** Mendix, JavaScript, Java.
 
-The project is structured with ATS (Applicant Tracking System) parsing in mind:
+-   **Impact:** Resolved **critical legacy system bottlenecks**,
+    ensuring **high uptime** during maintenance periods.
 
-- `pdflatex` is used directly rather than a `dvi → ps → pdf` pipeline, producing a PDF with proper Unicode ToUnicode maps that ATS text extractors can read correctly
-- Hyphenation is disabled globally via `\usepackage[none]{hyphenat}` to prevent mid-word breaks in extracted text
-- List bullets are rendered as plain hyphens (`-`) which survive all extraction pipelines
-- Date ranges use `YYYY - YYYY` with a plain ASCII hyphen for reliable ATS date parsing
-- PDF metadata (author, title, subject, keywords) is embedded via `hyperref`
-- The `detex` plain text target provides a clean paste-ready version with no encoding ambiguity
+## 2018 - 2021: Software Engineer - Inovo Telecoms, Centurion (Permanent)
 
-## Notes
+-   **Duties:** Design and implementation of front and back-end
+    processes. Application monitoring solutions; Widget development;
+    Document generation.
 
-- `pdflatex` is run twice per build to allow internal references and layout to stabilise
-- The HTML target uses `htlatex` with `custom.css` appended post-build for styling
-- Temporary files produced by `htlatex` in the working directory are removed automatically after each HTML build
-- The Markdown target uses `pandoc` reading `.tex` directly, preserving headings, bold, lists, and hyperlinks
+-   **Technologies:** Mendix, JavaScript, Java, SQL, CSS/LESS/SASS,
+    Python.
 
----
+-   **Impact:** Engineered **monitoring tools** resulting in enhanced
+    fault detection and **increased uptime**.
 
-## Feedback
+## 2018 - 2018: Software Engineer - Teraco Data Environments (Contract)
 
-### Strengths
+-   **Duties:** Development and maintenance of front and back-end
+    processes; Widget development.
 
-**Single source of truth.** All all formats are derived from one `.tex` file. There is no risk of the PDF and the ATS submission copy diverging — a common problem when people maintain a Word document and a plain text version separately.
+-   **Technologies:** Mendix, JavaScript, CSS/LESS/SASS.
 
-**ATS pipeline is genuinely well considered.** The switch from `ps2pdf` to `pdflatex`, the hyphenation disable, the plain hyphen bullets, and the explicit `YYYY - YYYY` date format are all deliberate and correct choices. Most people submitting LaTeX CVs do not think about any of this.
+-   **Impact:** Optimised **frontend widgets** to significantly
+    **elevate agent response times**.
 
-**Two independent text extraction paths.** Having both `detex` and `pdftotext` outputs is useful — one for submission, one for verification. Being able to inspect the `pdftotext` output directly tells you exactly what an ATS parser will see from the PDF, which online ATS scoring tools cannot reliably replicate.
+## 2015 - 2018: Software Engineer - DocQnet Systems International (Contract)
 
-**Embedded PDF metadata.** Most LaTeX CVs ship with empty or default metadata. Having author, title, subject, and keywords embedded in the PDF is a meaningful signal to any system that reads XMP data.
+-   **Duties:** Design, prototype, develop and maintain web
+    applications; Widget development.
 
-**CSS theming is self-contained.** Appending `custom.css` post-build rather than relying on `htlatex` default styles means the HTML output is independently styleable without touching the `.tex` source. The dark theme is distinctive and appropriate for a technical role.
+-   **Technologies:** Mendix, JavaScript, CSS/LESS/SASS, C, C++, Java.
 
-**Makefile is clean and composable.** Individual targets mean you can rebuild only what changed. The double `pdflatex` run is correctly handled. `.PHONY` is correctly declared.
+-   **Impact:** Developed multiple **rapid prototypes** across various
+    fields to **drive sales demonstrations**.
 
-**Date-first format in experience entries.** Putting `YYYY - YYYY:` at the start of each subsection heading rather than right-aligning dates is an ATS-safe structural choice that also reads cleanly across all output formats.
+## 2014 - 2015: Software Engineer - Software Testing Solutions (Contract)
 
----
+-   **Duties:** Front and back-end process implementation; Graphics
+    design.
 
-### Weaknesses
+-   **Technologies:** Mendix, JavaScript, CSS/LESS/SASS.
 
-**`htlatex` is a fragile dependency.** It is part of TeX4ht which is old, inconsistently maintained, and produces verbose HTML with non-semantic class names like `cmbx-10` tied to internal font names. If the LaTeX source changes in certain ways the CSS selectors can silently break. The modern successor `make4ht` or using `pandoc` for HTML output as well would be more robust long-term.
+-   **Impact:** Enhanced **UI components** and styling to **drive client
+    engagement** and resolve recurring defects.
 
-**The Markdown header block is best-effort.** `pandoc` does a good job converting the body but the header — name, contact details, links — relies on LaTeX line break commands that do not translate idiomatically into Markdown. The result requires manual inspection after any structural change to the header.
+# Education
 
-**No error surfacing in the Makefile.** The `@` prefix suppresses all output. A `pdflatex` compile error will halt the build but the failure message may be buried. Removing `@` from the `pdflatex` lines, or adding a `|| cat $(OUTDIR)/$(NAME).log` fallback, would make failures significantly easier to diagnose.
+-   2009 - 2013: NDip DataMetrics - University of South Africa
 
-**`htlatex` temp file cleanup is incomplete.** The cleanup block removes known temp files from the working directory by name but does not account for `.aux`, `.log`, and `.out` files that accumulate in `$(OUTDIR)` across builds from the `pdflatex` runs.
+-   2013 - 2014: Turning and Machining - Kupferberg Engineering Shop
 
-**CSS targets font-specific class names.** Rules like `.cmbx-12` and `.cmbx-10` are tied to `htlatex` internal font rendering class names which can change depending on the LaTeX font stack. Switching fonts in the `.tex` would silently break parts of the HTML styling with no warning.
+-   2003: High School Diploma - Namaqualand High School
 
-**No version tracking or changelog.** Since this is a versioned document in a repository there is no record of what changed between versions. A simple `CHANGELOG.md` or git tags would make it easier to track when content was last updated, which matters when sending the CV to multiple employers over time.
+# Technical Skills
+
+-   **Languages:** JavaScript (ES6+), Java, Python, Groovy, C, C++, SQL,
+    HTML5, CSS/SASS/LESS
+
+-   **Frameworks & Platforms:** Mendix (Expert), React Native, VueJS,
+    SAP CAP, Node.js
+
+-   **Cloud & Backend:** Azure, SAP CPI, Xano, Document Intelligence,
+    MCP Server
+
+-   **Specialized:** Digital Wallets, Decentralized Identity (DID), API
+    Integrations, Widget Development
+
+# Industries
+
+Finance, Insurance, Credit, Aviation, Governance, Agriculture, IoT,
+Human Resources, Data Centre, Call Center, Retail, eCommerce, Digital
+Identity.
+
+# Languages
+
+English (Fluent) Afrikaans (Mother Tongue)
+
+# References
+
+Available upon request.

@@ -2,7 +2,7 @@
 
 Software Developer\
 Northern Cape, South Africa\
-+27 78 197 8471\
++27 64 000 6731\
 <ockert8080@gmail.com>\
 [linkedin.com/in/ockert-van-schalkwyk-b98b303a5](https://www.linkedin.com/in/ockert-van-schalkwyk-b98b303a5/)\
 [github.com/otvnvs](https://github.com/otvnvs)\
