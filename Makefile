@@ -64,6 +64,8 @@ $(HTML): $(TEX) $(CSS)
 		$(OUTDIR)/$(NAME).log \
 		$(OUTDIR)/$(NAME).out
 	@cp $(HTML) ./index.html
+	@cp $(HTML) ./index.html
+	@cp ./src/custom.css $(NAME).css
 
 $(MD): $(TEX)
 	@mkdir -p $(@D)
